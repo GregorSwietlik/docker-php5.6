@@ -16,14 +16,16 @@ RUN wget http://pear.php.net/go-pear.phar
 RUN php go-pear.phar
 RUN pear channel-update pear.php.net
 
-RUN pear channel-discover phpseclib.sourceforge.net && \
-    pear install phpseclib/Net_SFTP && \
-    pear install Mail && \
+RUN pear install Mail && \
     pear install Mail_mime && \
     pear install Net_SMTP && \
     pear install -f HTML_AJAX && \
     pear install HTML_Template_IT
+	
+RUN pear channel-discover phpseclib.sourceforge.net
+RUN pear install phpseclib/Net_SFTP
 
 RUN cp /etc/default/locale /etc/default/locale_default
 RUN LC_ALL=fr_FR.UTF-8
-RUN /etc/init.d/cron restart
+
+CMD /etc/init.d/cron start

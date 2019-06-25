@@ -1,13 +1,13 @@
 version: '3'
 services:
   mg-php5.6:
-    image: 4a7631f04b7d
+    image: bf3adb5deb5a
     restart: always
   
     volumes:
-      - "/opt/www/docker/source:/root/source"
+      - "/opt/www/docker/cli/source:/root/source"
       - "/opt/www/docker/cron:/var/spool/cron/crontabs"
-      - "/opt/www/docker/cli/ini.php:/etc/php/5.6/cli/ini.php"
+      - "/opt/www/docker/cli/php.ini:/etc/php/5.6/cli/php.ini"
       - "/opt/www/home:/home"
       - "/opt/www/home2:/home2"
       - "/opt/www/home3:/home3"
