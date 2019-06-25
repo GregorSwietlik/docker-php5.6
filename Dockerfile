@@ -28,4 +28,4 @@ RUN pear install phpseclib/Net_SFTP
 RUN cp /etc/default/locale /etc/default/locale_default
 RUN LC_ALL=fr_FR.UTF-8
 
-CMD /etc/init.d/cron start
+ENTRYPOINT /etc/init.d/cron start && /bin/bash

@@ -1,7 +1,7 @@
 version: '3'
 services:
   mg-php5.6:
-    image: 32a8fa8c592f
+    image: 72e627a705b0
     restart: always
   
     volumes:
